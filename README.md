@@ -63,7 +63,9 @@ For Contributing this project follow this instruction :
     #Commit Message
     <br>
     -feature : Adding new feature, page and component.
+    <br>
     -fix : Fixing bug and Error.
+    <br>
     -style : Adding new Style in CSS or Tailwind CSS.
 
     Example : git commit -m "dzakiy_feature: Menambahkan halaman login"
