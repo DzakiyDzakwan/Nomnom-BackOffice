@@ -21,38 +21,44 @@ Here tutorial for cloning this project :
 
 For Contributing this project follow this instruction :
 
-1. Create new branch
+1.  Create new branch
 
     #Branch Type
     -feature : Adding new feature, page and component.
     -fix : Fixing bug and Error.
     -style : Adding new Style in CSS or Tailwind CSS.
 
-    #Branch Name
-    [branch_type]\_[branch_name]
+    #Branch Name [branch_type]\_[branch_name]
+    <br>
     Example :
 
-    - feature_login
-    - style_card
-    - fix_dropdown
+    -   feature_login
+    -   style_card
+    -   fix_dropdown
 
     #Creating Branch
-    git branch branch_name (example : git branch feature_login)
+    <br>
+    -git branch branch_name (example : git branch feature_login)
 
     #Changing Branch
-    git checkout branch_name (example : git checkout feature_login)
+    <br>
+    -git checkout branch_name (example : git checkout feature_login)
 
     #Deleting Branch
-    git branch -d branch_name (example: git branch -d feature_login)
+    <br>
+    -git branch -d branch_name (example: git branch -d feature_login)
 
-2. Adding file from working directory to staging index
- <p>git add .<p>
+2.  Adding file from working directory to staging index
+    <br>
+    -git add .
 
-3. Check Status
- <p>git status</p>
+3.  Check Status
+    <br>
+    -git status
 
-4. Commit File
-    <p>git commit -m "<b><i>name_type:commit_message</i></b>"</p>
+4.  Commit File
+    <br>
+    -git commit -m "<b><i>name_type:commit_message</i></b>"
 
     #Commit Message
     -feature : Adding new feature, page and component.
@@ -61,10 +67,11 @@ For Contributing this project follow this instruction :
 
     Example : git commit -m "dzakiy_feature: Menambahkan halaman login"
 
-5. Push File to Branch Repository
-    <p>git push -u origin branch_name</p>
+5.  Push File to Branch Repository
+    <br>
+    -git push -u origin branch_name
 
-6. Pull Request for Review and then merge to master repository.
+6.  Pull Request for Review and then merge to master repository.
 
 ## Contributor
 
