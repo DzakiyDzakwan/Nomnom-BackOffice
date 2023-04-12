@@ -4,7 +4,7 @@
 
 ## About Nom Nom Admin
 
-<p>Nom Nom is a content Management System for Nom Nom Web Application. Here Admin do their task for managing, controlling and Monitoring backend system.</p>
+<p>Nom Nom Admin is a content Management System for Nom Nom Web Application. Here Admin do their task for managing, controlling and Monitoring backend system.</p>
 
 ## Cloning Project
 
