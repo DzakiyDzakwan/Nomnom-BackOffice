@@ -22,12 +22,13 @@ Here tutorial for cloning this project :
 For Contributing this project follow this instruction :
 
 1. Create new branch
-   //Branch Type
-   -feature : Adding new feature, page and component.
-   -fix : Fixing bug and Error.
-   -style : Adding new Style in CSS or Tailwind CSS.
 
-    //Branch Name
+    #Branch Type
+    -feature : Adding new feature, page and component.
+    -fix : Fixing bug and Error.
+    -style : Adding new Style in CSS or Tailwind CSS.
+
+    #Branch Name
     [branch_type]\_[branch_name]
     Example :
 
@@ -35,25 +36,25 @@ For Contributing this project follow this instruction :
     - style_card
     - fix_dropdown
 
-    //Creating Branch
+    #Creating Branch
     git branch branch_name (example : git branch feature_login)
 
-    //Changing Branch
+    #Changing Branch
     git checkout branch_name (example : git checkout feature_login)
 
-    //Deleting Branch
+    #Deleting Branch
     git branch -d branch_name (example: git branch -d feature_login)
 
 2. Adding file from working directory to staging index
-   git add .
+ <p>git add .<p>
 
 3. Check Status
-   git status
+ <p>git status</p>
 
 4. Commit File
-   git commit -m "<b><i>name_type:commit_message</i></b>"
+    <p>git commit -m "<b><i>name_type:commit_message</i></b>"</p>
 
-    //Commit Message
+    #Commit Message
     -feature : Adding new feature, page and component.
     -fix : Fixing bug and Error.
     -style : Adding new Style in CSS or Tailwind CSS.
@@ -61,7 +62,7 @@ For Contributing this project follow this instruction :
     Example : git commit -m "dzakiy_feature: Menambahkan halaman login"
 
 5. Push File to Branch Repository
-   git push -u origin branch_name
+    <p>git push -u origin branch_name</p>
 
 6. Pull Request for Review and then merge to master repository.
 
