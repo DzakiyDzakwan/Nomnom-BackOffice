@@ -61,6 +61,7 @@ For Contributing this project follow this instruction :
     -git commit -m "<b><i>name_type:commit_message</i></b>"
 
     #Commit Message
+    <br>
     -feature : Adding new feature, page and component.
     -fix : Fixing bug and Error.
     -style : Adding new Style in CSS or Tailwind CSS.
