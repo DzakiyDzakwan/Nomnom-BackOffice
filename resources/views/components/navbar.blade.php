@@ -1,4 +1,4 @@
-<header class="card mx-3 mt-3">
+<header class="mb-2">
     <nav class="navbar navbar-expand navbar-light navbar-top">
         <div class="container-fluid">
             <a href="#" class="burger-btn d-block" onclick="event.preventDefault()">
@@ -110,8 +110,7 @@
                             <hr class="dropdown-divider" />
                         </li>
                         <li>
-                            <a class="dropdown-item" href=""><i
-                                    class="icon-mid bi bi-box-arrow-left me-2"></i>
+                            <a class="dropdown-item" href=""><i class="icon-mid bi bi-box-arrow-left me-2"></i>
                                 Logout</a>
                         </li>
                     </ul>
