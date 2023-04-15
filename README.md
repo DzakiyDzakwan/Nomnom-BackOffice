@@ -24,15 +24,15 @@ For Contributing this project follow this instruction :
 1.  Create new branch
 
     #Branch Type
-    <br>
-    -feature : Adding new feature, page and component.
-    <br>
-    -fix : Fixing bug and Error.
-    <br>
-    -style : Adding new Style in CSS or Tailwind CSS.
 
-    #Branch Name [branch_type]\_[branch_name]
-    <br>
+    -   feature : Adding new feature, page and component.
+    -   fix : Fixing bug and Error.
+    -   style : Adding new Style in CSS or Tailwind CSS.
+
+    #Branch Name
+
+    [branch_type]\_[branch_name]
+
     Example :
 
     -   feature_login
@@ -40,43 +40,58 @@ For Contributing this project follow this instruction :
     -   fix_dropdown
 
     #Creating Branch
-    <br>
-    -git branch branch_name (example : git branch feature_login)
+
+    ```
+    -git branch branch_name
+    (example : git branch feature_login)
+    ```
 
     #Changing Branch
-    <br>
-    -git checkout branch_name (example : git checkout feature_login)
+
+    ```
+    -git checkout branch_name
+    (example : git checkout feature_login)
+    ```
 
     #Deleting Branch
-    <br>
+
+    ```
     -git branch -d branch_name (example: git branch -d feature_login)
+    ```
 
 2.  Adding file from working directory to staging index
-    <br>
-    -git add .
+
+    ```
+    git add .
+    ```
 
 3.  Check Status
-    <br>
-    -git status
+
+    ```
+    git status
+    ```
 
 4.  Commit File
-    <br>
-    -git commit -m "<b><i>name_type:commit_message</i></b>"
+
+    ```
+    -git commit -m "name_type:commit_message"
+    ```
 
     #Commit Message
-    <br>
-    -feature : Adding new feature, page and component.
-    <br>
-    -fix : Fixing bug and Error.
-    <br>
-    -style : Adding new Style in CSS or Tailwind CSS.
 
-    Example : git commit -m "dzakiy_feature: Menambahkan halaman login"
+    -   feature : Adding new feature, page and component.
+    -   fix : Fixing bug and Error.
+    -   style : Adding new Style in CSS or Tailwind CSS.
+    -   Example :
+
+    ```
+    git commit -m "dzakiy_feature: Menambahkan halaman login"
+    ```
 
 5.  Push File to Branch Repository
-    <br>
+    ```
     -git push -u origin branch_name
-
+    ```
 6.  Pull Request for Review and then merge to master repository.
 
 ## Contributor
