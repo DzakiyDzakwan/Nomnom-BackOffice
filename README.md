@@ -1,6 +1,6 @@
 ## Nom Nom Admin
 
-<p align="center"><img src="./public/img/logo.png" width="400" alt="Nom Nom Logo"></p>
+<p align="center"><img src="./public/assets/images/logo/logo.png" width="400" alt="Nom Nom Logo"></p>
 
 ## About Nom Nom Admin
 
