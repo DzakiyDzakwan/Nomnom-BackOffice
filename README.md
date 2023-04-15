@@ -24,8 +24,11 @@ For Contributing this project follow this instruction :
 1.  Create new branch
 
     #Branch Type
+    <br>
     -feature : Adding new feature, page and component.
+    <br>
     -fix : Fixing bug and Error.
+    <br>
     -style : Adding new Style in CSS or Tailwind CSS.
 
     #Branch Name [branch_type]\_[branch_name]
