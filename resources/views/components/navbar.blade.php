@@ -1,4 +1,4 @@
-<header class="card">
+<header class="card mx-3 mt-3">
     <nav class="navbar navbar-expand navbar-light navbar-top">
         <div class="container-fluid">
             <a href="#" class="burger-btn d-block" onclick="event.preventDefault()">
