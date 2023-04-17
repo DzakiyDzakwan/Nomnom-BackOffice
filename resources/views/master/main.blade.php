@@ -8,8 +8,8 @@
 
     <link rel="stylesheet" href="{{ asset('assets/css/main/app.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/main/app-dark.css') }}">
-    <link rel="shortcut icon" href="{{ asset('assets/images/logo/350x75.png') }}" type="image/png">
-    <link rel="shortcut icon" href="{{ asset('assets/images/logo/logo.png') }}" type="image/png">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo/icon.png') }}" type="image/png">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo/icon.png') }}" type="image/png">
     @yield('style')
 </head>
 
