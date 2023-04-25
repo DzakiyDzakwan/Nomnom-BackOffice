@@ -22,4 +22,20 @@ Route::get('/dash', function(){
     return view('dashboard');
 });
 
+Route::get('/user', function(){
+    return view('user');
+});
+
+Route::get('/utensill', function(){
+    return view('utensill');
+});
+
+Route::get('/ingredient', function(){
+    return view('ingredient');
+});
+
+Route::get('/category', function(){
+    return view('category');
+});
+
 Route::get('login', [LoginController::class, 'index'])->name('login');
