@@ -41,4 +41,35 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * The roles that belong to the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function followers()
+    {
+        return $this->belongsToMany(User::class, 'followers', 'uuid', 'user_id');
+    }
+
+    /**
+     * Get all of the comments for the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+
+    public function comments()
+    {
+        return $this->hasMany(Komentar::class, 'user_id', 'uuid');
+    }
+
+    public function ratings()
+    {
+        return $this->hasMany(Rating::class, 'user_id', 'uuid');
+    }
+
+    public function collections()
+    {
+        return $this->hasMany(Koleksi::class, 'user_id', 'uuid');
+    }
 }
