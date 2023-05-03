@@ -19,7 +19,6 @@ return new class extends Migration
             $table->text('deskripsi');
             $table->string('durasi');
             $table->foreign('resep_id')->references('id')->on('reseps')->onUpdate('cascade')->onDelete('cascade');
-            $table->timestamps();
         });
     }
 

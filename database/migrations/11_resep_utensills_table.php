@@ -17,7 +17,6 @@ return new class extends Migration
             $table->char('utensill_id');
             $table->foreign('resep_id')->references('id')->on('reseps')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('utensill_id')->references('id')->on('utensills')->onUpdate('cascade')->onDelete('cascade');
-            $table->timestamps();
         });
     }
 

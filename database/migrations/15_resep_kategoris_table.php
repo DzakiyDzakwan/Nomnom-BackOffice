@@ -16,7 +16,6 @@ return new class extends Migration
             $table->bigInteger('kategori_id')->unsigned();
             $table->foreign('resep_id')->references('id')->on('reseps')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('kategori_id')->references('id')->on('kategoris')->onUpdate('cascade')->onDelete('cascade');
-            $table->timestamps();
         });
     }
 

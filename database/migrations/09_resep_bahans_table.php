@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('bahan');
             $table->integer('jumlah');
             $table->string('satuan');
-            $table->timestamps();
         });
     }
 

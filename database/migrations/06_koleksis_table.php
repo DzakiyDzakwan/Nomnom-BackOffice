@@ -16,7 +16,7 @@ return new class extends Migration
             $table->uuid('user_id');
             $table->string('nama_koleksi');
             $table->foreign('user_id')->references('uuid')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->timestamps();
+            $table->timestamp('created_at');
         });
     }
 
