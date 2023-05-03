@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('komen');
             $table->foreign('user_id')->references('uuid')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('resep_id')->references('id')->on('reseps')->onUpdate('cascade')->onDelete('cascade');
-            $table->timestamps();
+            $table->timestamp('added_at');
         });
     }
 
