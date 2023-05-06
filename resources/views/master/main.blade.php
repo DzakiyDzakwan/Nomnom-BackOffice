@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/main/app-dark.css') }}">
     <link rel="shortcut icon" href="{{ asset('assets/images/logo/icon.png') }}" type="image/png">
     <link rel="shortcut icon" href="{{ asset('assets/images/logo/icon.png') }}" type="image/png">
+    @livewireStyles
     @yield('style')
 </head>
 
@@ -26,6 +27,7 @@
     <script src="{{ asset('assets/js/bootstrap.js') }}"></script>
     <script src="{{ asset('assets/js/app.js') }}"></script>
     @yield('script')
+    @livewireScripts
 </body>
 
 </html>
