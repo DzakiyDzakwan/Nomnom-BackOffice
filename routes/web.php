@@ -29,6 +29,10 @@ Route::get('/user', function(){
     return view('user');
 });
 
+Route::get('/user-detail', function(){
+    return view('userdetail');
+});
+
 Route::get('/utensill', function(){
     return view('utensill');
 });
