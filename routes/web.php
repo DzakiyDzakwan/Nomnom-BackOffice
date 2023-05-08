@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RouteController;
+use App\Http\Livewire\Test;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,28 +16,17 @@ use App\Http\Controllers\LoginController;
 |
 */
 
-Route::get('/', function(){
-    return view('dashboard');
-});
+/* Route::get('/test', Test::class); */
 
-Route::get('/user', function(){
-    return view('user');
-});
 
-Route::get('/user-detail', function(){
-    return view('userdetail');
-});
-
-Route::get('/utensill', function(){
-    return view('utensill');
-});
-
-Route::get('/ingredient', function(){
-    return view('ingredient');
-});
-
-Route::get('/category', function(){
-    return view('category');
-});
 
 Route::get('login', [LoginController::class, 'index'])->name('login');
+
+Route::controller(RouteController::class)->group(function(){
+    Route::get('/', 'index');
+    Route::get('/user', 'user');
+    Route::get('/user-detail', 'detail');
+    Route::get('/ingredient', 'ingredient');
+    Route::get('/utensill', 'utensill');
+    Route::get('/category', 'category');
+});
