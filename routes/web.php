@@ -13,15 +13,8 @@ use App\Http\Controllers\LoginController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/test', function(){
-    return view('test');
-});
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/dash', function(){
+Route::get('/', function(){
     return view('dashboard');
 });
 

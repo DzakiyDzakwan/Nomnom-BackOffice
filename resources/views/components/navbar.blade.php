@@ -11,7 +11,8 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-lg-0">
+                {{-- Notification And Mail --}}
+                {{-- <ul class="navbar-nav ms-auto mb-lg-0">
                     <li class="nav-item dropdown me-1">
                         <a class="nav-link active dropdown-toggle text-gray-600" href="#"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -77,7 +78,7 @@
                             </li>
                         </ul>
                     </li>
-                </ul>
+                </ul> --}}
                 <div class="dropdown">
                     <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
                         <div class="user-menu d-flex">

@@ -57,11 +57,11 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header d-flex align-items-center justify-content-between">
-                                <h4>User Table</h4>
-                                <div class="d-flex gap-2">
+                                <h4>List User</h4>
+                                {{-- <div class="d-flex gap-2">
                                     @livewire('button', ['label' => 'History <i class="bi bi-clock-history"></i>', 'class' => 'btn-info'])
                                     @livewire('button', ['label' => 'Create <i class="bi bi-pencil-square"></i>', 'class' => 'btn-success'])
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="card-body">
                                 <table class="table" id="table1">
