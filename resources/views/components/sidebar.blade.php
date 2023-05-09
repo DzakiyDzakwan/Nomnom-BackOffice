@@ -42,49 +42,49 @@
             <ul class="menu">
                 <li class="sidebar-title">Menu</li>
 
-                <li class="sidebar-item active ">
+                <li class="sidebar-item @if ($page === 'dashboard') active @endif">
                     <a href="/" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
 
-                <li class="sidebar-item">
+                <li class="sidebar-item @if ($page === 'user') active @endif">
                     <a href="/user" class='sidebar-link'>
                         <i class="bi bi-people-fill"></i>
                         <span>User</span>
                     </a>
                 </li>
 
-                <li class="sidebar-item">
+                <li class="sidebar-item @if ($page === 'category') active @endif">
                     <a href="/category" class='sidebar-link'>
                         <i class="bi bi-tags-fill"></i>
-                        <span>Categories</span>
+                        <span>Category</span>
                     </a>
                 </li>
 
-                <li class="sidebar-item">
+                <li class="sidebar-item @if ($page === 'ingredient') active @endif">
                     <a href="/ingredient" class='sidebar-link'>
                         <i class="bi bi-basket2"></i>
                         <span>Ingredients</span>
                     </a>
                 </li>
 
-                <li class="sidebar-item">
+                <li class="sidebar-item @if ($page === 'utensill') active @endif">
                     <a href="/utensill" class='sidebar-link'>
                         <i class="bi bi-tools"></i>
                         <span>Utensills</span>
                     </a>
                 </li>
 
-                <li class="sidebar-item">
+                <li class="sidebar-item @if ($page === 'recipe') active @endif">
                     <a href="index.html" class='sidebar-link'>
                         <i class="bi bi-book-fill"></i>
                         <span>Recipes</span>
                     </a>
                 </li>
 
-                <li class="sidebar-item">
+                <li class="sidebar-item @if ($page === 'log') active @endif">
                     <a href="index.html" class='sidebar-link'>
                         <i class="bi bi-book-fill"></i>
                         <span>Log</span>

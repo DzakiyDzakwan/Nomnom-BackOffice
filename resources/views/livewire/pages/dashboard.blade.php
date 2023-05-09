@@ -1,12 +1,4 @@
-@section('title')
-    <title>Dashboard</title>
-@endsection
-
-@section('style')
-    <link rel="stylesheet" href="{{ asset('assets/css/shared/iconly.css') }}">
-@endsection
-
-@section('content')
+<div>
     <div class="page-heading">
         <h3>Dashboard</h3>
     </div>
@@ -194,7 +186,8 @@
                                                     </div>
                                                 </td>
                                                 <td class="col-auto">
-                                                    <p class=" mb-0">Wow amazing design! Can you make another tutorial for
+                                                    <p class=" mb-0">Wow amazing design! Can you make another tutorial
+                                                        for
                                                         this design?</p>
                                                 </td>
                                             </tr>
@@ -208,9 +201,9 @@
             </div>
         </section>
     </div>
-@endsection
+</div>
 
-@section('script')
+@push('script')
     <script src="{{ asset('assets/extensions/apexcharts/apexcharts.min.js') }}"></script>
     <script src="{{ asset('assets/js/pages/dashboard.js') }}"></script>
-@endsection
+@endpush

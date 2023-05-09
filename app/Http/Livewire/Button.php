@@ -10,6 +10,10 @@ class Button extends Component
 
     public function render()
     {
-        return view('livewire.button');
+        return view('livewire.components.button');
+    }
+
+    public function click() {
+        dd('berhasil');
     }
 }
