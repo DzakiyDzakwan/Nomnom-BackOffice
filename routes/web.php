@@ -22,12 +22,10 @@ use App\Http\Livewire\Pages\Test;
 |
 */
 
-/* Route::get('/test', Test::class); */
-
-
 
 Route::get('login', [LoginController::class, 'index'])->name('login');
 
+/* Controller Layout */
 /* Route::controller(RouteController::class)->group(function(){
     Route::get('/', 'index');
     Route::get('/user', 'user');
@@ -37,6 +35,7 @@ Route::get('login', [LoginController::class, 'index'])->name('login');
     Route::get('/category', 'category');
 }); */
 
+/* Livewire Layout */
 Route::get('/test', Test::class)->name('test');
 Route::get('/', Dashboard::class)->name('dashboard');
 Route::get('/user', User::class)->name('user');
