@@ -6,7 +6,7 @@
 
 <div>
     <div class="page-heading">
-        <h3>User Aplikasi</h3>
+        <h3>Pengguna Aplikasi</h3>
     </div>
     <div class="page-content">
         <section class="row">
@@ -22,7 +22,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                        <h6 class="text-muted font-semibold">Total User</h6>
+                                        <h6 class="text-muted font-semibold">Total Pengguna</h6>
                                         <h6 class="font-extrabold mb-0">112.000</h6>
                                     </div>
                                 </div>
@@ -39,7 +39,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                        <h6 class="text-muted font-semibold">User Aktif</h6>
+                                        <h6 class="text-muted font-semibold">Pengguna Aktif</h6>
                                         <h6 class="font-extrabold mb-0">183.000</h6>
                                     </div>
                                 </div>
@@ -51,7 +51,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header d-flex align-items-center justify-content-between">
-                                <h4>List User</h4>
+                                <h4>List Pengguna</h4>
                                 <div class="d-flex gap-2">
                                     <button class="btn btn-small btn-success" data-bs-toggle="tooltip"
                                         data-bs-placement="rigth" title="Tambah" wire:click="click">
@@ -80,15 +80,15 @@
                                             </td>
                                             <td>
                                                 <button class="btn btn-small btn-info" data-bs-toggle="tooltip"
-                                                    data-bs-placement="rigth" title="Detail User">
+                                                    data-bs-placement="rigth" title="Detail Pengguna">
                                                     <i class="bi bi-eye"></i>
                                                 </button>
                                                 <button class="btn btn-small btn-warning" data-bs-toggle="tooltip"
-                                                    data-bs-placement="rigth" title="Edit User">
+                                                    data-bs-placement="rigth" title="Edit Pengguna">
                                                     <i class="bi bi-pencil"></i>
                                                 </button>
                                                 <button class="btn btn-small btn-danger" data-bs-toggle="tooltip"
-                                                    data-bs-placement="rigth" title="Hapus User">
+                                                    data-bs-placement="rigth" title="Hapus Pengguna">
                                                     <i class="bi bi-trash3"></i>
                                                 </button>
                                             </td>

@@ -11,14 +11,14 @@ class CreateIngredient extends Component
 
     public $id_bahan, $bahan, $harga, $satuan;
 
-    protected $listeners = ['show-create' => 'show'];
+    protected $listeners = ['showCreate'];
 
     public function render()
     {
         return view('livewire.components.modals.create-ingredient');
     }
 
-    public function show() {
+    public function showCreate() {
         $this->dispatchBrowserEvent('toggle-create');
     }
 

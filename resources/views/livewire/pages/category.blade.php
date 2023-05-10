@@ -1,11 +1,6 @@
-@push('style')
-    <link rel="stylesheet" href="{{ asset('assets/extensions/datatables.net-bs5/css/dataTables.bootstrap5.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/pages/datatables.css') }}">
-@endpush
-
 <div>
     <div class="page-heading">
-        <h3>Kategori Masakan</h3>
+        <h3>Kategori Resep</h3>
     </div>
     <div class="page-content">
         <section class="row">
@@ -45,7 +40,7 @@
                                 <table class="table" id="table1">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
+                                            <th>ID</th>
                                             <th>Nama Kategori</th>
                                             <th>Sub Kategori</th>
                                             <th>Created At</th>
@@ -54,7 +49,7 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>1</td>
+                                            <td>C001</td>
                                             <td>Asian</td>
                                             <td>Cuisine</td>
                                             <td>2023-05-09</td>
@@ -83,9 +78,3 @@
         </section>
     </div>
 </div>
-
-
-@push('script')
-    <script src="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.js"></script>
-    <script src="{{ asset('assets/js/pages/datatables.js') }}"></script>
-@endpush

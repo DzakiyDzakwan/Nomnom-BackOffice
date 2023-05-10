@@ -11,6 +11,8 @@
     <link rel="shortcut icon" href="{{ asset('assets/images/logo/icon.png') }}" type="image/png">
     <link rel="shortcut icon" href="{{ asset('assets/images/logo/icon.png') }}" type="image/png">
     <link rel="stylesheet" href="{{ asset('assets/css/shared/iconly.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/extensions/datatables.net-bs5/css/dataTables.bootstrap5.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/pages/datatables.css') }}">
     @stack('style')
 </head>
 

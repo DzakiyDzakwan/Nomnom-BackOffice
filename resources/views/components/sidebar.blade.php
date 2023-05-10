@@ -52,32 +52,39 @@
                 <li class="sidebar-item @if ($page === 'user') active @endif">
                     <a href="/user" class='sidebar-link'>
                         <i class="bi bi-people-fill"></i>
-                        <span>User</span>
+                        <span>Pengguna</span>
                     </a>
                 </li>
 
                 <li class="sidebar-item @if ($page === 'category') active @endif">
                     <a href="/category" class='sidebar-link'>
                         <i class="bi bi-tags-fill"></i>
-                        <span>Category</span>
+                        <span>Kategori</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item @if ($page === 'sub-category') active @endif">
+                    <a href="/sub-category" class='sidebar-link'>
+                        <i class="bi bi-tags-fill"></i>
+                        <span>Sub Kategori</span>
                     </a>
                 </li>
 
                 <li class="sidebar-item @if ($page === 'ingredient') active @endif">
                     <a href="/ingredient" class='sidebar-link'>
                         <i class="bi bi-basket2"></i>
-                        <span>Ingredients</span>
+                        <span>Bahan Masak</span>
                     </a>
                 </li>
 
                 <li class="sidebar-item @if ($page === 'utensill') active @endif">
                     <a href="/utensill" class='sidebar-link'>
                         <i class="bi bi-tools"></i>
-                        <span>Utensills</span>
+                        <span>Peralatan Dapur</span>
                     </a>
                 </li>
 
-                <li class="sidebar-item @if ($page === 'recipe') active @endif">
+                {{-- <li class="sidebar-item @if ($page === 'recipe') active @endif">
                     <a href="index.html" class='sidebar-link'>
                         <i class="bi bi-book-fill"></i>
                         <span>Recipes</span>
@@ -89,7 +96,7 @@
                         <i class="bi bi-book-fill"></i>
                         <span>Log</span>
                     </a>
-                </li>
+                </li> --}}
 
                 {{-- <li class="sidebar-item  has-sub">
                     <a href="#" class='sidebar-link'>

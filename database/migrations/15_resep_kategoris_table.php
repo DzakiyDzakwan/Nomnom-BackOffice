@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('resep_kategoris', function (Blueprint $table) {
             $table->bigInteger('resep_id')->unsigned();
-            $table->bigInteger('kategori_id')->unsigned();
+            $table->char('kategori_id', 4);
             $table->foreign('resep_id')->references('id')->on('reseps')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('kategori_id')->references('id')->on('kategoris')->onUpdate('cascade')->onDelete('cascade');
         });

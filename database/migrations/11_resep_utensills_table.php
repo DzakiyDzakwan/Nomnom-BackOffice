@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('resep_utensills', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('resep_id')->unsigned();
-            $table->char('utensill_id');
+            $table->char('utensill_id', 4);
             $table->foreign('resep_id')->references('id')->on('reseps')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('utensill_id')->references('id')->on('utensills')->onUpdate('cascade')->onDelete('cascade');
         });

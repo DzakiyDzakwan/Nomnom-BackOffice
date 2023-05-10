@@ -9,6 +9,7 @@ use App\Http\Livewire\Pages\UserDetail;
 use App\Http\Livewire\Pages\Ingredient;
 use App\Http\Livewire\Pages\Utensill;
 use App\Http\Livewire\Pages\Category;
+use App\Http\Livewire\Pages\SubCategory;
 use App\Http\Livewire\Pages\Test;
 
 /*
@@ -43,3 +44,4 @@ Route::get('/user-detail', UserDetail::class)->name('user-detail');
 Route::get('/ingredient', ingredient::class)->name('ingredient');
 Route::get('/utensill', Utensill::class)->name('utensill');
 Route::get('/category', Category::class)->name('category');
+Route::get('/sub-category', SubCategory::class)->name('sub-category');
