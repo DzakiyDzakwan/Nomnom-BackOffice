@@ -13,4 +13,6 @@ class Bahan extends Model
         'created_at',
         'updated_at'
     ];
+
+    public $incrementing = false;
 }

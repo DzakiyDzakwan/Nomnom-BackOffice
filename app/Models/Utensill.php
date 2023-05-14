@@ -10,10 +10,11 @@ class Utensill extends Model
     use HasFactory;
 
     protected $guarded = [
-        'id',
         'created_at',
         'updated_at'
     ];
+
+    public $incrementing = false;
 
     /**
      * The roles that belong to the Utensill

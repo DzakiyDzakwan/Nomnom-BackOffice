@@ -26,6 +26,8 @@ class User extends Authenticatable
         'updated_at',
     ];
 
+    public $incrementing = false;
+
     /**
      * The attributes that should be hidden for serialization.
      *

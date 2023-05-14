@@ -14,6 +14,8 @@ class SubKategori extends Model
         'updated_at'
     ];
 
+    public $incrementing = false;
+
     /**
      * Get all of the categories for the SubKategori
      *
