@@ -10,10 +10,11 @@ class Kategori extends Model
     use HasFactory;
 
     protected $guarded = [
-        'id',
         'created_at',
         'updated_at'
     ];
+
+    public $incrementing = false;
 
     /**
      * The recipes that belong to the Kategori
@@ -23,5 +24,15 @@ class Kategori extends Model
     public function recipes()
     {
         return $this->belongsToMany(Rocipes::class, 'resep_kategoris', 'kategori_id', 'resep_id');
+    }
+
+    /**
+     * Get the subcategories that owns the Kategori
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function subcategories()
+    {
+        return $this->belongsTo(SubKategori::class, 'sub_kategori_id', 'id');
     }
 }

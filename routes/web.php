@@ -9,6 +9,7 @@ use App\Http\Livewire\Pages\UserDetail;
 use App\Http\Livewire\Pages\Ingredient;
 use App\Http\Livewire\Pages\Utensill;
 use App\Http\Livewire\Pages\Category;
+use App\Http\Livewire\Pages\SubCategory;
 use App\Http\Livewire\Pages\Test;
 
 /*
@@ -22,12 +23,10 @@ use App\Http\Livewire\Pages\Test;
 |
 */
 
-/* Route::get('/test', Test::class); */
-
-
 
 Route::get('login', [LoginController::class, 'index'])->name('login');
 
+/* Controller Layout */
 /* Route::controller(RouteController::class)->group(function(){
     Route::get('/', 'index');
     Route::get('/user', 'user');
@@ -37,6 +36,7 @@ Route::get('login', [LoginController::class, 'index'])->name('login');
     Route::get('/category', 'category');
 }); */
 
+/* Livewire Layout */
 Route::get('/test', Test::class)->name('test');
 Route::get('/', Dashboard::class)->name('dashboard');
 Route::get('/user', User::class)->name('user');
@@ -44,3 +44,4 @@ Route::get('/user-detail', UserDetail::class)->name('user-detail');
 Route::get('/ingredient', ingredient::class)->name('ingredient');
 Route::get('/utensill', Utensill::class)->name('utensill');
 Route::get('/category', Category::class)->name('category');
+Route::get('/sub-category', SubCategory::class)->name('sub-category');
