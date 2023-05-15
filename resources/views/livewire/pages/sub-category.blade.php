@@ -67,7 +67,8 @@
 
                                                     {{-- Delete Button --}}
                                                     <button class="btn btn-small btn-danger" data-bs-toggle="tooltip"
-                                                        data-bs-placement="rigth" title="Hapus Sub Kategori">
+                                                        data-bs-placement="rigth" title="Hapus Sub Kategori"
+                                                        wire:click="$emit('showDelete', '{{ $item->id }}')">
                                                         <i class="bi bi-trash3"></i>
                                                     </button>
                                                 </td>
@@ -84,15 +85,9 @@
         </section>
     </div>
     @livewire('components.modals.create-subcategory')
+    @livewire('components.modals.delete-modal', ['type' => 'Sub Kategori'])
 </div>
 
 @push('script')
-    <script>
-        const createModal = new bootstrap.Modal('#createModal')
-        // const editModal = new bootstrap.Modal('#editModal')
-
-        window.addEventListener('toggle-create', event => {
-            createModal.toggle();
-        });
-    </script>
+    <script src="{{ asset('assets/js/crud-component.js') }}"></script>
 @endpush

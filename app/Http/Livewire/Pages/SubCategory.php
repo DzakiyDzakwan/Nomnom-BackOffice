@@ -7,6 +7,9 @@ use Livewire\Component;
 
 class SubCategory extends Component
 {
+
+    protected $listeners = ['save' => 'render', 'delete'];
+
     public function render()
     {
 
@@ -14,5 +17,14 @@ class SubCategory extends Component
         $subcategories = SubKategori::all();
 
         return view('livewire.pages.sub-category', compact('total','subcategories'))->layout('master.layout', ['page'=>'sub-category', 'title' => 'Sub Kategori Resep']);
+    }
+
+    public function delete($id) {
+        try {
+            SubKategori::where('id', $id)->delete();
+            $this->dispatchBrowserEvent('toggle-delete');
+        } catch (\Throwable $th) {
+            dd($th);
+        }
     }
 }

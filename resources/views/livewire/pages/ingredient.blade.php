@@ -75,7 +75,8 @@
 
                                                     {{-- Delete Button --}}
                                                     <button class="btn btn-small btn-danger" data-bs-toggle="tooltip"
-                                                        data-bs-placement="rigth" title="Hapus Bahan">
+                                                        data-bs-placement="rigth" title="Hapus Bahan"
+                                                        wire:click="$emit('showDelete', '{{ $item->id }}') ">
                                                         <i class="bi bi-trash3"></i>
                                                     </button>
                                                 </td>
@@ -93,15 +94,9 @@
 
     {{-- Modal --}}
     @livewire('components.modals.create-ingredient')
+    @livewire('components.modals.delete-modal', ['type' => 'Bahan'])
 </div>
 
 @push('script')
-    <script>
-        const createModal = new bootstrap.Modal('#createModal')
-        // const editModal = new bootstrap.Modal('#editModal')
-
-        window.addEventListener('toggle-create', event => {
-            createModal.toggle();
-        });
-    </script>
+    <script src="{{ asset('assets/js/crud-component.js') }}"></script>
 @endpush
