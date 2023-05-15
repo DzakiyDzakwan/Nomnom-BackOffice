@@ -55,16 +55,22 @@
                                                 <td>{{ $item->subcategories->nama_sub_kategori }}</td>
                                                 <td>{{ $item->created_at }}</td>
                                                 <td>
-                                                    <button class="btn btn-small btn-info" data-bs-toggle="tooltip"
+                                                    {{-- Detail Button --}}
+                                                    {{-- <button class="btn btn-small btn-info" data-bs-toggle="tooltip"
                                                         data-bs-placement="rigth" title="Tooltip on top">
                                                         <i class="bi bi-eye"></i>
-                                                    </button>
+                                                    </button> --}}
+
+                                                    {{-- Edit Button --}}
                                                     <button class="btn btn-small btn-warning" data-bs-toggle="tooltip"
                                                         data-bs-placement="rigth" title="Tooltip on top">
                                                         <i class="bi bi-pencil"></i>
                                                     </button>
+
+                                                    {{-- Delete Button --}}
                                                     <button class="btn btn-small btn-danger" data-bs-toggle="tooltip"
-                                                        data-bs-placement="rigth" title="Tooltip on top">
+                                                        data-bs-placement="rigth" title="Tooltip on top"
+                                                        wire:click="$emit('showDelete', '{{ $item->id }}')">
                                                         <i class="bi bi-trash3"></i>
                                                     </button>
                                                 </td>
@@ -80,15 +86,9 @@
         </section>
     </div>
     @livewire('components.modals.create-category')
+    @livewire('components.modals.delete-modal', ['type' => 'Kategori'])
 </div>
 
 @push('script')
-    <script>
-        const createModal = new bootstrap.Modal('#createModal')
-        // const editModal = new bootstrap.Modal('#editModal')
-
-        window.addEventListener('toggle-create', event => {
-            createModal.toggle();
-        });
-    </script>
+    <script src="{{ asset('assets/js/crud-component.js') }}"></script>
 @endpush
