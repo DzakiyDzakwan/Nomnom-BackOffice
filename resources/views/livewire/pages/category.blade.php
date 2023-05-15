@@ -63,7 +63,8 @@
 
                                                     {{-- Edit Button --}}
                                                     <button class="btn btn-small btn-warning" data-bs-toggle="tooltip"
-                                                        data-bs-placement="rigth" title="Tooltip on top">
+                                                        data-bs-placement="rigth" title="Tooltip on top"
+                                                        wire:click="$emit('showEdit', '{{ $item->id }}')">
                                                         <i class="bi bi-pencil"></i>
                                                     </button>
 
@@ -86,6 +87,7 @@
         </section>
     </div>
     @livewire('components.modals.create-category')
+    @livewire('components.modals.edit-category')
     @livewire('components.modals.delete-modal', ['type' => 'Kategori'])
 </div>
 

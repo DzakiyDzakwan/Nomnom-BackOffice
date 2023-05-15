@@ -8,7 +8,7 @@ use Livewire\Component;
 class Category extends Component
 {
 
-    protected $listeners = ['save' => 'render', 'delete'];
+    protected $listeners = ['save' => 'render', 'update'=>'remder', 'delete'];
 
     public function render()
     {

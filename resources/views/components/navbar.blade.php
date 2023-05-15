@@ -84,7 +84,7 @@
                         <div class="user-menu d-flex">
                             <div class="user-name text-end me-3">
                                 <h6 class="mb-0 text-gray-600">
-                                    John Wick
+                                    Super Admin
                                 </h6>
                                 <p class="mb-0 text-sm text-gray-600">
                                     Admin
@@ -99,14 +99,14 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton"
                         style="min-width: 11rem">
-                        <li>
+                        {{--  <li>
                             <a class="dropdown-item" href="#"><i class="icon-mid bi bi-person me-2"></i>
                                 My Profile</a>
                         </li>
                         <li>
                             <a class="dropdown-item" href="#"><i class="icon-mid bi bi-key me-2"></i>
                                 Change Password</a>
-                        </li>
+                        </li> --}}
                         <li>
                             <hr class="dropdown-divider" />
                         </li>

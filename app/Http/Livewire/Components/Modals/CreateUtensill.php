@@ -3,7 +3,7 @@
 namespace App\Http\Livewire\Components\Modals;
 
 use Livewire\Component;
-use App\Models\Utensill as ModelsUtensill;
+use App\Models\Utensill as UtensillModel;
 
 class CreateUtensill extends Component
 {
@@ -22,7 +22,7 @@ class CreateUtensill extends Component
     }
 
     public function save() {
-        ModelsUtensill::create([
+        UtensillModel::create([
             'id' => $this->utensill_id,
             'nama_perlengkapan' => $this->utensill,
             'bahan' => $this->source
