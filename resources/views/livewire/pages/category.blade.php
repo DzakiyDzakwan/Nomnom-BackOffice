@@ -24,7 +24,10 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="row">
+                    <div class="col-12">
+                    </div>
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header d-flex align-items-center justify-content-between">
@@ -89,6 +92,7 @@
     @livewire('components.modals.create-category')
     @livewire('components.modals.edit-category')
     @livewire('components.modals.delete-modal', ['type' => 'Kategori'])
+    @livewire('components.alert-component')
 </div>
 
 @push('script')

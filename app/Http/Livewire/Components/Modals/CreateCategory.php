@@ -31,7 +31,12 @@ class CreateCategory extends Component
             'nama_kategori' => $this->kategori,
             'sub_kategori_id' => $this->sub_kategori
         ]);
-        
+
+        $item = [
+            "message" => 'Kategori <b>'. $this->kategori_id .'</b> Berhasil ditambahkan',
+            'type' => 'success'
+        ];
+        $this->emit('alert', $item);
         $this->reset();
         $this->emit('save');
         $this->dispatchBrowserEvent('toggle-create');

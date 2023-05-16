@@ -8,7 +8,7 @@ use Livewire\Component;
 class Category extends Component
 {
 
-    protected $listeners = ['save' => 'render', 'update'=>'remder', 'delete'];
+    protected $listeners = ['save' => 'render', 'update'=>'render', 'delete'];
 
     public function render()
     {
@@ -19,6 +19,11 @@ class Category extends Component
 
     public function delete($id) {
         try {
+            $item = [
+                "message" => 'Kategori <b>'. $id .'</b> Berhasil dihapus',
+                'type' => 'danger'
+            ];
+            $this->emit('alert', $item);
             Kategori::where('id', $id)->delete();
             $this->dispatchBrowserEvent('toggle-delete');
         } catch (\Throwable $th) {
