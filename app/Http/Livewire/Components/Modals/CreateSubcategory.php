@@ -10,10 +10,7 @@ class CreateSubcategory extends Component
 
     public $sub_id, $sub_kategori;
 
-    protected $listeners = [
-        'showCreate',
-        'showEdit'
-    ];
+    protected $listeners = ['showCreate'];
 
     public function render()
     {

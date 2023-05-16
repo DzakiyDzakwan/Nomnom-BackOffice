@@ -69,7 +69,8 @@
 
                                                     {{-- Edit Button --}}
                                                     <button class="btn btn-small btn-warning" data-bs-toggle="tooltip"
-                                                        data-bs-placement="rigth" title="Edit Bahan">
+                                                        data-bs-placement="rigth" title="Edit Bahan"
+                                                        wire:click="$emit('showEdit', '{{ $item->id }}') ">
                                                         <i class="bi bi-pencil"></i>
                                                     </button>
 
@@ -94,6 +95,7 @@
 
     {{-- Modal --}}
     @livewire('components.modals.create-ingredient')
+    @livewire('components.modals.edit-ingredient')
     @livewire('components.modals.delete-modal', ['type' => 'Bahan'])
 </div>
 

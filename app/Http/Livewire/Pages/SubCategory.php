@@ -8,7 +8,7 @@ use Livewire\Component;
 class SubCategory extends Component
 {
 
-    protected $listeners = ['save' => 'render', 'delete'];
+    protected $listeners = ['save' => 'render', 'update' => 'render', 'delete'];
 
     public function render()
     {

@@ -61,7 +61,8 @@
 
                                                     {{-- Edit Button --}}
                                                     <button class="btn btn-small btn-warning" data-bs-toggle="tooltip"
-                                                        data-bs-placement="rigth" title="Ubah Sub Kategori">
+                                                        data-bs-placement="rigth" title="Ubah Sub Kategori"
+                                                        wire:click="$emit('showEdit', '{{ $item->id }}')">
                                                         <i class="bi bi-pencil"></i>
                                                     </button>
 
@@ -85,6 +86,7 @@
         </section>
     </div>
     @livewire('components.modals.create-subcategory')
+    @livewire('components.modals.edit-subcategory')
     @livewire('components.modals.delete-modal', ['type' => 'Sub Kategori'])
 </div>
 

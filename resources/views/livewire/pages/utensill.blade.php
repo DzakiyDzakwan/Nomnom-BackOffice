@@ -63,7 +63,8 @@
 
                                                     {{-- Edit Button --}}
                                                     <button class="btn btn-small btn-warning" data-bs-toggle="tooltip"
-                                                        data-bs-placement="rigth" title="Tooltip on top">
+                                                        data-bs-placement="rigth" title="Tooltip on top"
+                                                        wire:click="$emit('showEdit', '{{ $item->id }}')">
                                                         <i class="bi bi-pencil"></i>
                                                     </button>
 
@@ -87,6 +88,7 @@
     </div>
 
     @livewire('components.modals.create-utensill')
+    @livewire('components.modals.edit-utensill')
     @livewire('components.modals.delete-modal', ['type' => 'Alat'])
 </div>
 
