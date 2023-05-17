@@ -26,19 +26,23 @@ class CreateCategory extends Component
     }
 
     public function save() {
-        Kategori::create([
-            'id' => $this->kategori_id,
-            'nama_kategori' => $this->kategori,
-            'sub_kategori_id' => $this->sub_kategori
-        ]);
-
-        $item = [
-            "message" => 'Kategori <b>'. $this->kategori_id .'</b> Berhasil ditambahkan',
-            'type' => 'success'
-        ];
-        $this->emit('alert', $item);
-        $this->reset();
-        $this->emit('save');
-        $this->dispatchBrowserEvent('toggle-create');
+        try {
+            Kategori::create([
+                'id' => $this->kategori_id,
+                'nama_kategori' => $this->kategori,
+                'sub_kategori_id' => $this->sub_kategori
+            ]);
+    
+            $item = [
+                "message" => 'Kategori <b>'. $this->kategori_id .'</b> Berhasil ditambahkan',
+                'type' => 'success'
+            ];
+            $this->emit('alert', $item);
+            $this->reset();
+            $this->emit('save');
+            $this->dispatchBrowserEvent('toggle-create');
+        } catch (\Throwable $th) {
+            dd($th);
+        }
     }
 }

@@ -26,6 +26,11 @@ class CreateSubcategory extends Component
             'id' => $this->sub_id,
             'nama_sub_kategori' => $this->sub_kategori
         ]);
+        $item = [
+            "message" => 'Sub Kategori <b>'. $this->sub_id .'</b> Berhasil Ditambahkan',
+            'type' => 'success'
+        ];
+        $this->emit('alert', $item);
         $this->reset();
         $this->emit('save');
         $this->dispatchBrowserEvent('toggle-create');

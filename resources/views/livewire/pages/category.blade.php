@@ -92,7 +92,6 @@
     @livewire('components.modals.create-category')
     @livewire('components.modals.edit-category')
     @livewire('components.modals.delete-modal', ['type' => 'Kategori'])
-    @livewire('components.alert-component')
 </div>
 
 @push('script')

@@ -26,12 +26,21 @@
             </div>
         </div>
     </div>
+    @livewire('components.alert-component')
     @livewireScripts
     <script src="assets/extensions/jquery/jquery.min.js"></script>
     <script src="{{ asset('assets/js/bootstrap.js') }}"></script>
     <script src="{{ asset('assets/js/app.js') }}"></script>
     <script src="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.js"></script>
     <script src="{{ asset('assets/js/pages/datatables.js') }}"></script>
+    <script>
+        /* Alert */
+        const toast = new bootstrap.Toast("#alert");
+
+        window.addEventListener("show-alert", (event) => {
+            toast.show();
+        });
+    </script>
     @stack('script')
 </body>
 

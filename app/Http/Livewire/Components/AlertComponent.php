@@ -17,8 +17,9 @@ class AlertComponent extends Component
     }
 
     public function alert($id) {
-        $this->message = $id['message'];
+        $this->render();
         $this->type = $id['type'];
+        $this->message = $id['message'];
         $this->dispatchBrowserEvent('show-alert');
     }
 }

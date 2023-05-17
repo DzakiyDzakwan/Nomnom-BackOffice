@@ -20,6 +20,11 @@ class Ingredient extends Component
     public function delete($id) {
         try {
             Bahan::where('id', $id)->delete();
+            $item = [
+                "message" => 'Bahan <b>'. $id .'</b> Berhasil dihapus',
+                'type' => 'danger'
+            ];
+            $this->emit('alert', $item);
             $this->dispatchBrowserEvent('toggle-delete');
         } catch (\Throwable $th) {
             dd($th);

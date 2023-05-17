@@ -19,13 +19,13 @@ class Category extends Component
 
     public function delete($id) {
         try {
+            Kategori::where('id', $id)->delete();
+            $this->dispatchBrowserEvent('toggle-delete');
             $item = [
                 "message" => 'Kategori <b>'. $id .'</b> Berhasil dihapus',
                 'type' => 'danger'
             ];
             $this->emit('alert', $item);
-            Kategori::where('id', $id)->delete();
-            $this->dispatchBrowserEvent('toggle-delete');
         } catch (\Throwable $th) {
             dd($th);
         }

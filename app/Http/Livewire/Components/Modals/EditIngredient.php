@@ -32,6 +32,11 @@ class EditIngredient extends Component
             'nama_bahan' => $this->bahan,
             'harga' => $this->harga.'/'.$this->satuan
         ]);
+        $item = [
+            "message" => 'Bahan <b>'. $this->id_bahan .'</b> Berhasil diubah',
+            'type' => 'warning'
+        ];
+        $this->emit('alert', $item);
         $this->reset();
         $this->emit('update');
         $this->dispatchBrowserEvent('toggle-edit');

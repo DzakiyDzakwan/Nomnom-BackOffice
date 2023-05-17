@@ -30,6 +30,11 @@ class EditUtensill extends Component
             'nama_perlengkapan' => $this->utensill,
             'bahan' => $this->source
         ]);
+        $item = [
+            "message" => 'Alat <b>'. $this->utensill_id .'</b> Berhasil diubah',
+            'type' => 'warning'
+        ];
+        $this->emit('alert', $item);
         $this->reset();
         $this->emit('update');
         $this->dispatchBrowserEvent('toggle-edit');

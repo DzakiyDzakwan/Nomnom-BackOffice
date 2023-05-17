@@ -28,6 +28,11 @@ class EditSubcategory extends Component
         SubKategori::where('id', $this->sub_id)->update([
             'nama_sub_kategori' => $this->sub_kategori
         ]);
+        $item = [
+            "message" => 'Sub Kategori <b>'. $this->sub_id .'</b> Berhasil diubah',
+            'type' => 'warning'
+        ];
+        $this->emit('alert', $item);
         $this->reset();
         $this->emit('update');
         $this->dispatchBrowserEvent('toggle-edit');

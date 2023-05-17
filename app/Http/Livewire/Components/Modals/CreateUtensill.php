@@ -27,6 +27,11 @@ class CreateUtensill extends Component
             'nama_perlengkapan' => $this->utensill,
             'bahan' => $this->source
         ]);
+        $item = [
+            "message" => 'Alat <b>'. $this->utensill_id .'</b> Berhasil ditambahkan',
+            'type' => 'success'
+        ];
+        $this->emit('alert', $item);
         $this->reset();
         $this->emit('save');
         $this->dispatchBrowserEvent('toggle-create');

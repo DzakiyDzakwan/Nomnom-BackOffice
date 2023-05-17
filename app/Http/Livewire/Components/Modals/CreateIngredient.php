@@ -28,6 +28,11 @@ class CreateIngredient extends Component
             'nama_bahan' => $this->bahan,
             'harga' => $this->harga.'/'.$this->satuan
         ]);
+        $item = [
+            "message" => 'Bahan <b>'. $this->id_bahan .'</b> Berhasil ditambahkan',
+            'type' => 'success'
+        ];
+        $this->emit('alert', $item);
         $this->reset();
         $this->emit('save');
         $this->dispatchBrowserEvent('toggle-create');

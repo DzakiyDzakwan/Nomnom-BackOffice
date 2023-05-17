@@ -1,5 +1,6 @@
 <div class="toast-container position-fixed top-0 end-0 p-3">
-    <div id="alert" class="toast align-items-center text-bg-{{ $type }} " role="alert" aria-live="assertive"
+    <div id="alert" class="toast align-items-center text-bg-{{ $type }}
+" role="alert" aria-live="assertive"
         aria-atomic="true">
         <div class="d-flex">
             <div class="toast-body">
