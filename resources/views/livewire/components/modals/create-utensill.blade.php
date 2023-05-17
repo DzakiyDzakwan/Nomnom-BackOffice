@@ -6,7 +6,8 @@
             <div class="modal-content">
                 <div class="modal-header bg-success">
                     <h1 class="modal-title fs-5 white" id="exampleModalLabel">Tambah Peralatan Dapur</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
                 </div>
                 <form wire:submit.prevent="save">
                     <div class="modal-body">

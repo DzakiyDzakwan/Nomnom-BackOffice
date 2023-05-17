@@ -33,6 +33,12 @@ class EditCategory extends Component
             'sub_kategori_id' => $this->sub_kategori
         ]);
         
+        $item = [
+            "message" => 'Kategori <b>'. $this->kategori_id .'</b> Berhasil diubah',
+            'type' => 'warning'
+        ];
+
+        $this->emit('alert', $item);
         $this->reset();
         $this->emit('update');
         $this->dispatchBrowserEvent('toggle-edit');

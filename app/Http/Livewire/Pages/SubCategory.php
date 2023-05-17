@@ -22,6 +22,11 @@ class SubCategory extends Component
     public function delete($id) {
         try {
             SubKategori::where('id', $id)->delete();
+            $item = [
+                "message" => 'Sub Kategori <b>'. $id .'</b> Berhasil dihapus',
+                'type' => 'danger'
+            ];
+            $this->emit('alert', $item);
             $this->dispatchBrowserEvent('toggle-delete');
         } catch (\Throwable $th) {
             dd($th);

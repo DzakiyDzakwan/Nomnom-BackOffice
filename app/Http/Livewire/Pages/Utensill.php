@@ -20,6 +20,11 @@ class Utensill extends Component
     public function delete($id) {
         try {
             ModelsUtensill::where('id', $id)->delete();
+            $item = [
+                "message" => 'Alat <b>'. $id .'</b> Berhasil dihapus',
+                'type' => 'danger'
+            ];
+            $this->emit('alert', $item);
             $this->dispatchBrowserEvent('toggle-delete');
         } catch (\Throwable $th) {
             dd($th);

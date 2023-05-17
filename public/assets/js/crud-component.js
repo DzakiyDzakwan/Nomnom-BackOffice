@@ -1,3 +1,4 @@
+/* Modal */
 const createModal = new bootstrap.Modal("#createModal");
 const editModal = new bootstrap.Modal("#editModal");
 const deleteModal = new bootstrap.Modal("#deleteModal");
