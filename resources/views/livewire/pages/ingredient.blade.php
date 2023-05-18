@@ -47,6 +47,7 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
+                                            <th>Gambar</th>
                                             <th>Nama Bahan</th>
                                             <th>Harga Pasaran</th>
                                             <th>Created At</th>
@@ -57,6 +58,10 @@
                                         @foreach ($bahan as $item)
                                             <tr>
                                                 <td>{{ $item->id }}</td>
+                                                <td>
+                                                    <img src="storage/images/bahan/{{ $item->image }}" alt=""
+                                                        width="128px">
+                                                </td>
                                                 <td>{{ $item->nama_bahan }}</td>
                                                 <td>Rp.{{ $item->harga }}</td>
                                                 <td>{{ $item->created_at }}</td>

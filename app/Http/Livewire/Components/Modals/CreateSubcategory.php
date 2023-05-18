@@ -24,7 +24,7 @@ class CreateSubcategory extends Component
     public function save() {
         $this->validate(
             [
-                'sub_id' => 'required|unique:App\Models\SubKategori,id|max:5|min:5|regex:/SC[0-9]{3}',
+                'sub_id' => 'required|unique:App\Models\SubKategori,id|max:5|min:5|regex:/SC[0-9]{3}/',
                 'sub_kategori' => 'required|unique:App\Models\SubKategori,nama_sub_kategori|regex:/[A-Za-z]/'
             ],
             [
