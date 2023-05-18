@@ -17,7 +17,7 @@
                                     </div>
                                     <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                                         <h6 class="text-muted font-semibold">Pengguna</h6>
-                                        <h6 class="font-extrabold mb-0">112.000</h6>
+                                        <h6 class="font-extrabold mb-0">{{ $user }}</h6>
                                     </div>
                                 </div>
                             </div>
@@ -34,7 +34,7 @@
                                     </div>
                                     <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                                         <h6 class="text-muted font-semibold">Kategori</h6>
-                                        <h6 class="font-extrabold mb-0">10</h6>
+                                        <h6 class="font-extrabold mb-0">{{ $kategori }}</h6>
                                     </div>
                                 </div>
                             </div>
@@ -51,7 +51,7 @@
                                     </div>
                                     <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                                         <h6 class="text-muted font-semibold">Bahan</h6>
-                                        <h6 class="font-extrabold mb-0">100</h6>
+                                        <h6 class="font-extrabold mb-0">{{ $bahan }}</h6>
                                     </div>
                                 </div>
                             </div>
@@ -68,7 +68,7 @@
                                     </div>
                                     <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                                         <h6 class="text-muted font-semibold">Peralatan</h6>
-                                        <h6 class="font-extrabold mb-0">70</h6>
+                                        <h6 class="font-extrabold mb-0">{{ $alat }}</h6>
                                     </div>
                                 </div>
                             </div>
@@ -94,5 +94,52 @@
 
 @push('script')
     <script src="{{ asset('assets/extensions/apexcharts/apexcharts.min.js') }}"></script>
+    <script>
+        var optionsProfileVisit = {
+            annotations: {
+                position: "back",
+            },
+            dataLabels: {
+                enabled: false,
+            },
+            chart: {
+                type: "bar",
+                height: 300,
+            },
+            fill: {
+                opacity: 1,
+            },
+            plotOptions: {},
+            series: [{
+                name: "user",
+                data: [0, 0, 0, 0, {{ $user }}],
+            }, ],
+            colors: "#FFB03E",
+            xaxis: {
+                categories: [
+                    "Januari",
+                    "Februari",
+                    "Maret",
+                    "April",
+                    "Mei",
+                    "Juni",
+                    "Juli",
+                    "Agustus",
+                    "September",
+                    "Oktober",
+                    "November",
+                    "Desember"
+                ],
+            },
+        };
+
+        let chartProfileVisit = new ApexCharts(
+            document.querySelector("#chart-profile-visit"),
+            optionsProfileVisit
+        );
+
+        chartProfileVisit.render();
+    </script>
+
     <script src="{{ asset('assets/js/pages/dashboard.js') }}"></script>
 @endpush

@@ -28,17 +28,46 @@ class EditIngredient extends Component
     }
 
     public function save() {
-        Bahan::where('id', $this->id_bahan)->update([
-            'nama_bahan' => $this->bahan,
-            'harga' => $this->harga.'/'.$this->satuan
-        ]);
-        $item = [
-            "message" => 'Bahan <b>'. $this->id_bahan .'</b> Berhasil diubah',
-            'type' => 'warning'
-        ];
-        $this->emit('alert', $item);
-        $this->reset();
-        $this->emit('update');
-        $this->dispatchBrowserEvent('toggle-edit');
+        $this->validate(
+            [
+                'bahan' => 'required|unique:App\Models\Bahan,nama_bahan',
+                'harga' => 'required',
+                'satuan' =>'required'
+            ],
+            [
+                'bahan.required' => ':attribute tidak boleh kosong.',
+                'bahan.unique' => ':attribute sudah tersedia.',
+                'bahan.regex' => ':attribute hanya boleh terdiri dari huru.',
+                
+                'harga.required' => ':attribute tidak boleh kosong.',
+                'harga.regex' => ':attribute hanya boleh terdiri dari angka',
+
+                'satuan.required' => ':attribute tidak boleh kosong.',
+                'satuan.regex' => ':attribute hanya boleh terdiri dari huruf'
+
+            ],
+            [
+                'bahan' => 'Bahan',
+                'harga' => 'Harga',
+                'satuan' => 'Satuan'
+            ]
+        );
+
+        try {
+            Bahan::where('id', $this->id_bahan)->update([
+                'nama_bahan' => $this->bahan,
+                'harga' => $this->harga.'/'.$this->satuan
+            ]);
+            $item = [
+                "message" => 'Bahan <b>'. $this->id_bahan .'</b> Berhasil diubah',
+                'type' => 'warning'
+            ];
+            $this->emit('alert', $item);
+            $this->reset();
+            $this->emit('update');
+            $this->dispatchBrowserEvent('toggle-edit');
+        } catch (\Throwable $th) {
+            dd($th);
+        }
     }
 }

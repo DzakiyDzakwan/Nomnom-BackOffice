@@ -2,8 +2,8 @@
 
 namespace App\Http\Livewire\Pages;
 
-use App\Models\Utensill as ModelsUtensill;
 use Livewire\Component;
+use App\Models\Peralatan;
 
 class Utensill extends Component
 {
@@ -12,14 +12,14 @@ class Utensill extends Component
 
     public function render()
     {
-        $total = ModelsUtensill::count();
-        $utensills = ModelsUtensill::all();
+        $total = Peralatan::count();
+        $utensills = Peralatan::all();
         return view('livewire.pages.utensill', compact('total', 'utensills'))->layout('master.layout', ['page'=>'utensill', 'title' => 'Peralatan Dapur']);
     }
 
     public function delete($id) {
         try {
-            ModelsUtensill::where('id', $id)->delete();
+            Peralatan::where('id', $id)->delete();
             $item = [
                 "message" => 'Alat <b>'. $id .'</b> Berhasil dihapus',
                 'type' => 'danger'

@@ -12,7 +12,6 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('komentars', function (Blueprint $table) {
-            $table->id();
             $table->uuid('user_id');
             $table->bigInteger('resep_id')->unsigned();
             $table->text('komen');

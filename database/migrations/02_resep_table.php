@@ -15,13 +15,14 @@ return new class extends Migration
             $table->id();
             $table->uuid('user_id');
             $table->string('nama_resep');
+            $table->string('image')->nullable();
             $table->text('deskripsi');
             $table->string('durasi');
             $table->integer('porsi');
             $table->enum('kesulitan', ['mudah', 'sulit']);
-            $table->string('kalori');
-            $table->string('lemak');
-            $table->string('karbohidrat');
+            $table->string('kalori')->nullable();
+            $table->string('lemak')->nullable();
+            $table->string('karbohidrat')->nullable();
             $table->foreign('user_id')->references('uuid')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });

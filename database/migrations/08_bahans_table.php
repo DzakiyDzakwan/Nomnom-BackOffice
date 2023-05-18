@@ -15,6 +15,7 @@ return new class extends Migration
             $table->char('id', 4)->primary();
             $table->string('nama_bahan');
             $table->string('harga');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
