@@ -15,6 +15,7 @@ return new class extends Migration
             $table->char('id', 4)->primary();
             $table->char('sub_kategori_id', 5);
             $table->string('nama_kategori');
+            $table->string('image')->nullable();
             $table->foreign('sub_kategori_id')->references('id')->on('sub_kategoris')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });

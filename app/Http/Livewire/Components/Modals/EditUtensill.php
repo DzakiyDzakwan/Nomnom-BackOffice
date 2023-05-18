@@ -4,13 +4,33 @@ namespace App\Http\Livewire\Components\Modals;
 
 use Livewire\Component;
 use App\Models\Peralatan;
+use Carbon\Carbon;
+use Livewire\WithFileUploads;
 
 class EditUtensill extends Component
 {
 
-    public $utensill_id, $utensill, $source;
+    use WithFileUploads;
+
+    public $utensill_id, $utensill, $source, $image;
 
     protected $listeners = ['showEdit'];
+
+    public function updated($fields) {
+        $this->validate(
+            [
+                'image' => 'image|max:5000'
+            ],
+            [
+                'image.image' => ':attribute harus berupa gambar',
+                'image.max' => 'Ukuran :attribute tidak boleh lebih besar dari 5mb'
+
+            ],
+            [
+                'image' => 'Gambar Alat'
+            ]
+            );
+    }
 
     public function render()
     {
@@ -30,23 +50,31 @@ class EditUtensill extends Component
         $this->validate(
             [
                 'utensill' => 'required | unique:App\Models\Peralatan,nama_peralatan',
-                'source' => 'required'
+                'source' => 'required',
+                'image' => 'required'
             ],
             [
                 'utensill.required' => ":attribute tidak boleh kosong",
-                'source.required' => ':attribute tidak boleh kosong'
+                'source.required' => ':attribute tidak boleh kosong',
+                'image.required' => ':attribute tidak boleh kosong',
             ],
             [
                 'utensill_id' => 'Peralatan ID',
                 'utensill' => 'Alat',
-                'source' => 'Bahan'
+                'source' => 'Bahan',
+                'image' => 'Gambar Alat'
             ]
         );
 
+        $imageName = Carbon::now()->timestamp.'.'.$this->image->extension();
+
         try {
+            $this->image->storeAs('public/images/peralatan', $imageName);
+
             Peralatan::where('id', $this->utensill_id)->update([
                 'nama_perlengkapan' => $this->utensill,
-                'bahan' => $this->source
+                'bahan' => $this->source,
+                'image' => $imageName
             ]);
             $item = [
                 "message" => 'Alat <b>'. $this->utensill_id .'</b> Berhasil diubah',

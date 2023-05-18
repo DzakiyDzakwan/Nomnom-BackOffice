@@ -1,79 +1,48 @@
 @push('style')
-    <link rel="stylesheet" href="assets/extensions/datatables.net-bs5/css/dataTables.bootstrap5.min.css">
-    <link rel="stylesheet" href="assets/css/pages/datatables.css">
 @endpush
 
 <div>
     <div class="page-heading">
-        <h3>Bahan</h3>
-    </div>
-    <div class="page-content">
-        <section class="row">
-            <div class="col-12 col-lg-12">
-                <div class="row">
-                    <div class="col-6 col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="card-body px-4 py-4-5">
-                                <div class="row">
-                                    <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
-                                        <div class="stats-icon purple mb-2">
-                                            <i class="iconly-boldShow"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                        <h6 class="text-muted font-semibold">Total Bahan</h6>
-                                        <h6 class="font-extrabold mb-0">112.000</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <div class="page-title">
+            <div class="row">
+                <div class="col-12 col-md-6 order-md-1 order-last">
+                    <h3>File Uploader</h3>
+                    <p class="text-subtitle text-muted">Javascript enhanced uploaders for easier file handling
+                    </p>
                 </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-header d-flex align-items-center justify-content-between">
-                                <h4>List Bahan</h4>
-                                <div class="d-flex gap-2">
-                                    <button class="btn btn-small btn-success" data-bs-toggle="tooltip"
-                                        data-bs-placement="rigth" title="Tambah" wire:click="click">
-                                        Tambah Bahan
-                                    </button>
-                                </div>
-                            </div>
+                <div class="col-12 col-md-6 order-md-2 order-first">
+                    <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">File Uploader</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <section class="section">
+            <div class="row">
+                <div class="col-12 col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">ImgBB Uploader</h5>
+                        </div>
+                        <div class="card-content">
                             <div class="card-body">
-                                <table class="table" id="table1">
-                                    <thead>
-                                        <tr>
-                                            <th>Username</th>
-                                            <th>Email</th>
-                                            <th>Role</th>
-                                            <th>Status</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Graiden</td>
-                                            <td>vehicula.aliquet@semconsequat.co.uk</td>
-                                            <td>Admin</td>
-                                            <td>
-                                                <span class="badge bg-success">Active</span>
-                                            </td>
-                                            <td>
-                                                <button class="btn btn-small btn-info">
-                                                    <i class="bi bi-eye"></i>
-                                                </button>
-                                                <button class="btn btn-small btn-warning">
-                                                    <i class="bi bi-pencil"></i>
-                                                </button>
-                                                <button class="btn btn-small btn-danger">
-                                                    <i class="bi bi-trash3"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <p class="card-text">Test Upload Image with livewire
+                                </p>
+                                <!-- imgBB file uploader -->
+                                <form wire:submit.prevent="save">
+                                    <input type="file" name="image" class="form-control" wire:model="file">
+                                    @if ($file)
+                                        <img src="{{ $file->temporaryUrl() }}">
+                                    @endif
+                                    <button class="btn btn-success container-fluid my-3" type="submit">Save
+                                        Photo</button>
+                                    @error('file')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -85,7 +54,4 @@
 
 
 @push('script')
-    <script src="assets/extensions/jquery/jquery.min.js"></script>
-    <script src="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.js"></script>
-    <script src="assets/js/pages/datatables.js"></script>
 @endpush

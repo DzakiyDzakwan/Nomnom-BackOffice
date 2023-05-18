@@ -4,13 +4,33 @@ namespace App\Http\Livewire\Components\Modals;
 
 use Livewire\Component;
 use App\Models\Peralatan;
+use Carbon\Carbon;
+use Livewire\WithFileUploads;
 
 class CreateUtensill extends Component
 {
 
-    public $utensill_id, $utensill, $source;
+    use WithFileUploads;
+
+    public $utensill_id, $utensill, $source, $image;
 
     protected $listeners = ['showCreate'];
+
+    public function updated($fields) {
+        $this->validate(
+            [
+                'image' => 'image|max:5000'
+            ],
+            [
+                'image.image' => ':attribute harus berupa gambar',
+                'image.max' => 'Ukuran :attribute tidak boleh lebih besar dari 5mb'
+
+            ],
+            [
+                'image' => 'Gambar Alat'
+            ]
+            );
+    }
 
     public function render()
     {
@@ -27,7 +47,8 @@ class CreateUtensill extends Component
             [
                 'utensill_id' => 'required|unique:App\Models\Peralatan,id|max:4|min:4|regex:/P+[0-9]{3}/',
                 'utensill' => 'required',
-                'source' => 'required'
+                'source' => 'required',
+                'image' => 'required'
             ],
             [
                 'utensill_id.required' => ':attribute tidak boleh kosong',
@@ -36,20 +57,26 @@ class CreateUtensill extends Component
                 'utensill_id.regex' => "Format penulisan :attribute salah",
 
                 'utensill.required' => ":attribute tidak boleh kosong",
-                'source.required' => ':attribute tidak boleh kosong'
+                'source.required' => ':attribute tidak boleh kosong',
+                'image.required' => ':attribute tidak boleh kosong'
             ],
             [
                 'utensill_id' => 'Peralatan ID',
                 'utensill' => 'Alat',
-                'source' => 'Bahan'
+                'source' => 'Bahan',
+                'image' => 'Gambar Alat'
             ]
         );
 
+        $imageName = Carbon::now()->timestamp.'.'.$this->image->extension();
+
         try {
+            $this->image->storeAs('public/images/peralatan', $imageName);
             Peralatan::create([
                 'id' => $this->utensill_id,
                 'nama_peralatan' => $this->utensill,
-                'bahan' => $this->source
+                'bahan' => $this->source,
+                'image' => $imageName
             ]);
             $item = [
                 "message" => 'Alat <b>'. $this->utensill_id .'</b> Berhasil ditambahkan',

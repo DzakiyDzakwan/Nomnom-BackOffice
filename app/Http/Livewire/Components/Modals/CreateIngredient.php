@@ -4,14 +4,33 @@ namespace App\Http\Livewire\Components\Modals;
 
 use Livewire\Component;
 use App\Models\Bahan;
-use GuzzleHttp\Psr7\Request;
+use Carbon\Carbon;
+use Livewire\WithFileUploads;
 
 class CreateIngredient extends Component
 {
 
-    public $bahan_id, $bahan, $harga, $satuan;
+    use WithFileUploads;
+
+    public $bahan_id, $bahan, $harga, $satuan, $image;
 
     protected $listeners = ['showCreate'];
+
+    public function updated($fields) {
+        $this->validate(
+            [
+                'image' => 'image|max:5000'
+            ],
+            [
+                'image.image' => ':attribute harus berupa gambar',
+                'image.max' => 'Ukuran :attribute tidak boleh lebih besar dari 5mb'
+
+            ],
+            [
+                'image' => 'Gambar Bahan'
+            ]
+            );
+    }
 
     public function render()
     {
@@ -29,7 +48,8 @@ class CreateIngredient extends Component
                 'bahan_id' => 'required|unique:App\Models\Bahan,id|max:4|min:4|regex:/B+[0-9]{3}/',
                 'bahan' => 'required|unique:App\Models\Bahan,nama_bahan|regex:/[A-za-z]/',
                 'harga' => 'required|regex:/^[1-9]/',
-                'satuan' =>'required|regex:/[A-Za-z]/'
+                'satuan' =>'required|regex:/[A-Za-z]/',
+                'image' => 'required'
             ],
             [
                 'bahan_id.required' => ':attribute tidak boleh kosong.',
@@ -46,22 +66,29 @@ class CreateIngredient extends Component
                 'harga.regex' => ':attribute hanya boleh terdiri dari angka',
 
                 'satuan.required' => ':attribute tidak boleh kosong.',
-                'satuan.regex' => ':attribute hanya boleh terdiri dari huruf'
+                'satuan.regex' => ':attribute hanya boleh terdiri dari huruf',
+
+                'image.required' => ':attribute tidak boleh kosong'
 
             ],
             [
                 'bahan_id' => 'Bahan ID',
                 'bahan' => 'Bahan',
                 'harga' => 'Harga',
-                'satuan' => 'Satuan'
+                'satuan' => 'Satuan',
+                'image' => 'Gambar Bahan'
             ]
         );
 
+        $imageName = Carbon::now()->timestamp.'.'.$this->image->extension();
+
         try {
+            $this->image->storeAs('public/images/bahan', $imageName);
             Bahan::create([
                 'id' => $this->bahan_id,
                 'nama_bahan' => $this->bahan,
-                'harga' => $this->harga.'/'.$this->satuan
+                'harga' => $this->harga.'/'.$this->satuan,
+                'image' => $imageName
             ]);
             $item = [
                 "message" => 'Bahan <b>'. $this->bahan_id .'</b> Berhasil ditambahkan',

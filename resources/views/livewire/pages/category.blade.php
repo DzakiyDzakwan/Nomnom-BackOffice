@@ -44,6 +44,7 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
+                                            <th>Gambar</th>
                                             <th>Nama Kategori</th>
                                             <th>Sub Kategori</th>
                                             <th>Created At</th>
@@ -54,26 +55,30 @@
                                         @foreach ($categories as $item)
                                             <tr>
                                                 <td>{{ $item->id }}</td>
+                                                <td>
+                                                    <img src="storage/images/kategori/{{ $item->image }}"
+                                                        alt="" width="128px">
+                                                </td>
                                                 <td>{{ $item->nama_kategori }}</td>
                                                 <td>{{ $item->subcategories->nama_sub_kategori }}</td>
                                                 <td>{{ $item->created_at }}</td>
                                                 <td>
                                                     {{-- Detail Button --}}
                                                     {{-- <button class="btn btn-small btn-info" data-bs-toggle="tooltip"
-                                                        data-bs-placement="rigth" title="Tooltip on top">
+                                                        data-bs-placement="rigth" title="Lihat Gambar Kategori">
                                                         <i class="bi bi-eye"></i>
                                                     </button> --}}
 
                                                     {{-- Edit Button --}}
                                                     <button class="btn btn-small btn-warning" data-bs-toggle="tooltip"
-                                                        data-bs-placement="rigth" title="Tooltip on top"
+                                                        data-bs-placement="rigth" title="Edit Kategori"
                                                         wire:click="$emit('showEdit', '{{ $item->id }}')">
                                                         <i class="bi bi-pencil"></i>
                                                     </button>
 
                                                     {{-- Delete Button --}}
                                                     <button class="btn btn-small btn-danger" data-bs-toggle="tooltip"
-                                                        data-bs-placement="rigth" title="Tooltip on top"
+                                                        data-bs-placement="rigth" title="Hapus Kategori"
                                                         wire:click="$emit('showDelete', '{{ $item->id }}')">
                                                         <i class="bi bi-trash3"></i>
                                                     </button>
