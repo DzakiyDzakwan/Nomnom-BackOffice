@@ -28,19 +28,41 @@ class EditCategory extends Component
     }
 
     public function save() {
-        Kategori::where('id', $this->kategori_id)->update([
-            'nama_kategori' => $this->kategori,
-            'sub_kategori_id' => $this->sub_kategori
-        ]);
-        
-        $item = [
-            "message" => 'Kategori <b>'. $this->kategori_id .'</b> Berhasil diubah',
-            'type' => 'warning'
-        ];
+        $this->validate(
+            [
+            'sub_kategori' => 'required',
+            'kategori' => 'required|unique:App\Models\Kategori,nama_kategori|regex:/[A-Za-z]/'
+            ],
+            [
+                'sub_kategori.required' => ':attribute tidak boleh kosong.',
 
-        $this->emit('alert', $item);
-        $this->reset();
-        $this->emit('update');
-        $this->dispatchBrowserEvent('toggle-edit');
+                'kategori.required' => ':attribute tidak boleh kosong.',
+                'kategori.unique' => ':attribute sudah tersedia.',
+                'kategori.regex' => ':attribute hanya boleh terdiri dari huruf.',
+            ],
+            [
+                'sub_kategori' => 'Sub Kategori',
+                'kategori' => 'Kategori'
+            ]
+        );
+
+        try {
+            Kategori::where('id', $this->kategori_id)->update([
+                'nama_kategori' => $this->kategori,
+                'sub_kategori_id' => $this->sub_kategori
+            ]);
+            
+            $item = [
+                "message" => 'Kategori <b>'. $this->kategori_id .'</b> Berhasil diubah',
+                'type' => 'warning'
+            ];
+    
+            $this->emit('alert', $item);
+            $this->reset();
+            $this->emit('update');
+            $this->dispatchBrowserEvent('toggle-edit');
+        } catch (\Throwable $th) {
+            dd($th);
+        }
     }
 }

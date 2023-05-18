@@ -25,16 +25,34 @@ class EditSubcategory extends Component
     }
 
     public function save() {
-        SubKategori::where('id', $this->sub_id)->update([
-            'nama_sub_kategori' => $this->sub_kategori
-        ]);
-        $item = [
-            "message" => 'Sub Kategori <b>'. $this->sub_id .'</b> Berhasil diubah',
-            'type' => 'warning'
-        ];
-        $this->emit('alert', $item);
-        $this->reset();
-        $this->emit('update');
-        $this->dispatchBrowserEvent('toggle-edit');
+        $this->validate(
+            [
+                'sub_kategori' => 'required|unique:App\Models\SubKategori,nama_sub_kategori|regex:/[A-Za-z]/'
+            ],
+            [
+                'sub_kategori.required' => ':attribute tidak boleh kosong',
+                'sub_kategori.unique' => ':attribute sudah tersedia',
+                'sub_kategori.regex' => ':attribute tidak boleh berisi angka',
+            ],
+            [
+                'sub_kategori' => 'Sub Kategori'
+            ]
+        );
+
+        try {
+            SubKategori::where('id', $this->sub_id)->update([
+                'nama_sub_kategori' => $this->sub_kategori
+            ]);
+            $item = [
+                "message" => 'Sub Kategori <b>'. $this->sub_id .'</b> Berhasil diubah',
+                'type' => 'warning'
+            ];
+            $this->emit('alert', $item);
+            $this->reset();
+            $this->emit('update');
+            $this->dispatchBrowserEvent('toggle-edit');
+        } catch (\Throwable $th) {
+            dd($th);
+        }
     }
 }

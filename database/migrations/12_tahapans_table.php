@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('tahapans', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('resep_id')->unsigned();
-            $table->string('gambar');
             $table->integer('urutan');
             $table->text('deskripsi');
+            $table->string('image')->nullable();
             $table->string('durasi');
             $table->foreign('resep_id')->references('id')->on('reseps')->onUpdate('cascade')->onDelete('cascade');
         });

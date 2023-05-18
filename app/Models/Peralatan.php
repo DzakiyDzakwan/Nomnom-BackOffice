@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Utensill extends Model
+class Peralatan extends Model
 {
     use HasFactory;
 
@@ -23,6 +23,6 @@ class Utensill extends Model
      */
     public function recipes()
     {
-        return $this->belongsToMany(Resep::class, 'resep_utensills', 'utensill_id', 'resep_id');
+        return $this->belongsToMany(Resep::class, 'resep_peralatans', 'peralatan_id', 'resep_id');
     }
 }

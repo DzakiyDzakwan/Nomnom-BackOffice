@@ -51,7 +51,7 @@
                                         @foreach ($utensills as $item)
                                             <tr>
                                                 <td>{{ $item->id }}</td>
-                                                <td>{{ $item->nama_perlengkapan }}</td>
+                                                <td>{{ $item->nama_peralatan }}</td>
                                                 <td>{{ $item->bahan }}</td>
                                                 <td>{{ $item->created_at }}</td>
                                                 <td>

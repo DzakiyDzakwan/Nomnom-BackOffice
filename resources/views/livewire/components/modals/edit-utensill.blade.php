@@ -15,15 +15,17 @@
                             <label for="utensill" class="form-label">Nama Alat</label>
                             <input type="text" class="form-control" id="utensill" aria-describedby="Kategori"
                                 wire:model.defer="utensill" placeholder="Masukkan disini...">
-                            {{-- <div id="emailHelp" class="form-text text-danger">We'll never share your email with anyone
-                                else.</div> --}}
+                            @error('utensill')
+                                <div id="emailHelp" class="form-text text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="source" class="form-label">Bahan</label>
                             <input type="text" class="form-control" id="source" aria-describedby="Kategori"
                                 wire:model.defer="source" placeholder="Masukkan disini...">
-                            {{-- <div id="emailHelp" class="form-text text-danger">We'll never share your email with anyone
-                                else.</div> --}}
+                            @error('source')
+                                <div id="emailHelp" class="form-text text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     <div class="modal-footer">

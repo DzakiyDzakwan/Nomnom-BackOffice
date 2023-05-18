@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('resep_id')->unsigned();
             $table->string('bahan');
-            $table->integer('jumlah');
+            $table->bigInteger('jumlah');
             $table->string('satuan');
         });
     }

@@ -15,15 +15,17 @@
                             <label for="sub_id" class="form-label">Sub Kategori ID</label>
                             <input type="text" class="form-control" id="sub_id" aria-describedby="sub_id"
                                 wire:model.defer="sub_id" placeholder="Masukkan disini...">
-                            {{-- <div id="emailHelp" class="form-text text-danger">We'll never share your email with anyone
-                                else.</div> --}}
+                            @error('sub_id')
+                                <div id="emailHelp" class="form-text text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="sub_kategori" class="form-label">Nama Sub Kategori</label>
                             <input type="text" class="form-control" id="sub_kategori" aria-describedby="subKategori"
                                 wire:model.defer="sub_kategori" placeholder="Masukkan disini...">
-                            {{-- <div id="emailHelp" class="form-text text-danger">We'll never share your email with anyone
-                                else.</div> --}}
+                            @error('sub_kategori')
+                                <div id="emailHelp" class="form-text text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     <div class="modal-footer">

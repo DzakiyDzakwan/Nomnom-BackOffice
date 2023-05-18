@@ -58,6 +58,6 @@ class Resep extends Model
 
     public function utensills()
     {
-        return $this->belongsToMany(Utensill::class, 'resep_utensills', 'resep_id', 'utensill_id');
+        return $this->belongsToMany(Peralatan::class, 'resep_peralatans', 'resep_id', 'peralatan_id');
     }
 }

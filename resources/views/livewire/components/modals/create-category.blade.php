@@ -15,8 +15,9 @@
                             <label for="kategori_id" class="form-label">Kategori ID</label>
                             <input type="text" class="form-control" id="kategori_id" aria-describedby="kategori_id"
                                 wire:model.defer="kategori_id" placeholder="Masukkan disini...">
-                            {{-- <div id="emailHelp" class="form-text text-danger">We'll never share your email with anyone
-                                else.</div> --}}
+                            @error('kategori_id')
+                                <div id="emailHelp" class="form-text text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="sub_kategori" class="form-label">Sub Kategori</label>
@@ -27,15 +28,17 @@
                                     <option value="{{ $item->id }}">{{ $item->nama_sub_kategori }}</option>
                                 @endforeach
                             </select>
-                            {{-- <div id="emailHelp" class="form-text text-danger">We'll never share your email with anyone
-                                else.</div> --}}
+                            @error('sub_kategori')
+                                <div id="emailHelp" class="form-text text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="kategori" class="form-label">Nama Kategori</label>
                             <input type="text" class="form-control" id="kategori" aria-describedby="Kategori"
                                 wire:model.defer="kategori" placeholder="Masukkan disini...">
-                            {{-- <div id="emailHelp" class="form-text text-danger">We'll never share your email with anyone
-                                else.</div> --}}
+                            @error('kategori')
+                                <div id="emailHelp" class="form-text text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     <div class="modal-footer">
