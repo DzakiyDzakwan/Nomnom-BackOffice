@@ -23,7 +23,7 @@
                                     </div>
                                     <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                                         <h6 class="text-muted font-semibold">Total Pengguna</h6>
-                                        <h6 class="font-extrabold mb-0">112.000</h6>
+                                        <h6 class="font-extrabold mb-0">{{ $total }}</h6>
                                     </div>
                                 </div>
                             </div>
@@ -40,7 +40,7 @@
                                     </div>
                                     <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                                         <h6 class="text-muted font-semibold">Pengguna Aktif</h6>
-                                        <h6 class="font-extrabold mb-0">183.000</h6>
+                                        <h6 class="font-extrabold mb-0">{{ $total }}</h6>
                                     </div>
                                 </div>
                             </div>
@@ -71,28 +71,31 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>Graiden</td>
-                                            <td>vehicula.aliquet@semconsequat.co.uk</td>
-                                            <td>Admin</td>
-                                            <td>
-                                                <span class="badge bg-success">Active</span>
-                                            </td>
-                                            <td>
-                                                <button class="btn btn-small btn-info" data-bs-toggle="tooltip"
-                                                    data-bs-placement="rigth" title="Detail Pengguna">
-                                                    <i class="bi bi-eye"></i>
-                                                </button>
-                                                <button class="btn btn-small btn-warning" data-bs-toggle="tooltip"
-                                                    data-bs-placement="rigth" title="Edit Pengguna">
-                                                    <i class="bi bi-pencil"></i>
-                                                </button>
-                                                <button class="btn btn-small btn-danger" data-bs-toggle="tooltip"
-                                                    data-bs-placement="rigth" title="Hapus Pengguna">
-                                                    <i class="bi bi-trash3"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
+                                        @foreach ($users as $item)
+                                            <tr>
+                                                <td>{{ $item->nama }}</td>
+                                                <td>{{ $item->email }}</td>
+                                                <td>{{ $item->role }}</td>
+                                                <td>
+                                                    <span class="badge bg-success">Active</span>
+                                                </td>
+                                                <td>
+                                                    <a class="btn btn-small btn-info" data-bs-toggle="tooltip"
+                                                        data-bs-placement="rigth" title="Detail Pengguna"
+                                                        href="/user-detail/{{ $item->uuid }}">
+                                                        <i class="bi bi-eye"></i>
+                                                    </a>
+                                                    <button class="btn btn-small btn-warning" data-bs-toggle="tooltip"
+                                                        data-bs-placement="rigth" title="Edit Pengguna">
+                                                        <i class="bi bi-pencil"></i>
+                                                    </button>
+                                                    <button class="btn btn-small btn-danger" data-bs-toggle="tooltip"
+                                                        data-bs-placement="rigth" title="Hapus Pengguna">
+                                                        <i class="bi bi-trash3"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
