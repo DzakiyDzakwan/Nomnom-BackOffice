@@ -8,7 +8,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/user">User</a></li>
-                <li class="breadcrumb-item active" aria-current="page">User Detail</li>
+                <li class="breadcrumb-item active" aria-current="page">{{ $data->uuid }}</li>
             </ol>
         </nav>
     </div>
@@ -41,12 +41,12 @@
                                             <tr>
                                                 <td class="py-2 fw-bold">Username</td>
                                                 <td class="px-3 fw-medium">:</td>
-                                                <td>@user123</td>
+                                                <td>{{ $data->username }}</td>
                                             </tr>
                                             <tr>
                                                 <td class="py-2 fw-bold">Email</td>
                                                 <td class="px-3 fw-medium">:</td>
-                                                <td>user1@gmail.com</td>
+                                                <td>{{ $data->email }}</td>
                                             </tr>
                                             <tr>
                                                 <td class="py-2 fw-bold">Jenis Kelamin</td>
@@ -56,7 +56,7 @@
                                             <tr>
                                                 <td class="py-2 fw-bold">Pekerjaan</td>
                                                 <td class="px-3 fw-medium">:</td>
-                                                <td>Mahasiswa</td>
+                                                <td>{{ $data->pekerjaan }}</td>
                                             </tr>
                                             <tr>
                                                 <td class="py-2 fw-bold">Pengikut</td>
@@ -71,21 +71,7 @@
                                             <tr>
                                                 <td class="py-2 fw-bold">Bio</td>
                                                 <td class="px-3 fw-medium">:</td>
-                                                <td>" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-                                                    vel
-                                                    lectus ipsum. Praesent in tincidunt nunc. Integer at maximus elit,
-                                                    ut
-                                                    pretium sem. Aliquam fermentum, justo quis tempor accumsan, massa
-                                                    tellus
-                                                    sagittis orci, vulputate sodales nisi lectus in magna. Nam sed enim
-                                                    a
-                                                    arcu hendrerit convallis nec a erat. Sed aliquet erat lorem, a
-                                                    vehicula
-                                                    eros egestas tempus. Etiam rhoncus aliquet mauris non ultricies. Nam
-                                                    ac
-                                                    venenatis orci. Phasellus dignissim eleifend vestibulum. Vivamus
-                                                    auctor
-                                                    libero nunc, dictum tempor odio pretium sit amet. "</td>
+                                                <td>" {{ $data->bio }} "</td>
                                             </tr>
                                         </table>
                                     </div>

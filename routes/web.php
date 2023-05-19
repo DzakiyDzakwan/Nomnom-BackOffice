@@ -40,7 +40,7 @@ Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::get('/test', Test::class)->name('test');
 Route::get('/', Dashboard::class)->name('dashboard');
 Route::get('/user', User::class)->name('user');
-Route::get('/user-detail', UserDetail::class)->name('user-detail');
+Route::get('/user-detail/{id}', UserDetail::class)->name('user-detail');
 Route::get('/ingredient', ingredient::class)->name('ingredient');
 Route::get('/utensill', Utensill::class)->name('utensill');
 Route::get('/category', Category::class)->name('category');

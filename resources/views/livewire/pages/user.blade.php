@@ -85,10 +85,13 @@
                                                         href="/user-detail/{{ $item->uuid }}">
                                                         <i class="bi bi-eye"></i>
                                                     </a>
-                                                    <button class="btn btn-small btn-warning" data-bs-toggle="tooltip"
+
+                                                    {{-- Edit button --}}
+                                                    {{-- <button class="btn btn-small btn-warning" data-bs-toggle="tooltip"
                                                         data-bs-placement="rigth" title="Edit Pengguna">
                                                         <i class="bi bi-pencil"></i>
-                                                    </button>
+                                                    </button> --}}
+
                                                     <button class="btn btn-small btn-danger" data-bs-toggle="tooltip"
                                                         data-bs-placement="rigth" title="Hapus Pengguna">
                                                         <i class="bi bi-trash3"></i>
