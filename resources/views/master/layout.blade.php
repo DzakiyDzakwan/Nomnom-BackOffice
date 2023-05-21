@@ -20,7 +20,7 @@
     <div id="app">
         @include('components.sidebar')
         <div id="main" class='layout-navbar'>
-            @include('components.navbar')
+            @livewire('components.navbar')
             <div id="main-content">
                 {{ $slot }}
             </div>
