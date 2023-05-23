@@ -3,7 +3,7 @@
         <div class="sidebar-header position-relative">
             <div class="d-flex flex-column justify-content-between align-items-center">
                 <div class="logo">
-                    <a href="index.html"><img src="assets/images/logo/350x75.png" alt="Logo" srcset=""></a>
+                    <a href="/dashboard"><img src="assets/images/logo/350x75.png" alt="Logo" srcset=""></a>
                 </div>
                 <div class="theme-toggle d-flex gap-2  align-items-center mt-2">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -43,7 +43,7 @@
                 <li class="sidebar-title">Menu</li>
 
                 <li class="sidebar-item @if ($page === 'dashboard') active @endif">
-                    <a href="/" class='sidebar-link'>
+                    <a href="/dashboard" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Dashboard</span>
                     </a>
