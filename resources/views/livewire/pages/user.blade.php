@@ -55,7 +55,7 @@
                                 <div class="d-flex gap-2">
                                     <button class="btn btn-small btn-success" data-bs-toggle="tooltip"
                                         data-bs-placement="rigth" title="Tambah" wire:click="click">
-                                        Tambah Admin <i class="bi bi-pencil-square" style="font-size: 18px"></i>
+                                        Tambah Admin&nbsp <i class="bi bi-pencil-square" style="font-size: 18px"></i>
                                     </button>
                                 </div>
                             </div>

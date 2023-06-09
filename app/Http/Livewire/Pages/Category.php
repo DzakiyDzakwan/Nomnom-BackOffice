@@ -30,4 +30,9 @@ class Category extends Component
             dd($th);
         }
     }
+
+    public function export()
+    {
+        return redirect('/category/export');
+    }
 }

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Report;
 use App\Http\Livewire\Auth\Login;
 // use App\Http\Controllers\RouteController;
 use App\Http\Livewire\Pages\Dashboard;
@@ -35,3 +35,7 @@ Route::get('/ingredient', ingredient::class)->name('ingredient');
 Route::get('/utensill', Utensill::class)->name('utensill');
 Route::get('/category', Category::class)->name('category');
 Route::get('/sub-category', SubCategory::class)->name('sub-category');
+Route::get('/category/export', [Report::class, 'exportCategory'])->name('export-category');
+Route::get('/sub-category/export', [Report::class, 'exportSubCategory'])->name('export-SubCategory');
+Route::get('/ingredient/export', [Report::class, 'exportIngredient'])->name('export-ingredient');
+Route::get('/utensill/export', [Report::class, 'exportUtensill'])->name('export-utensill');

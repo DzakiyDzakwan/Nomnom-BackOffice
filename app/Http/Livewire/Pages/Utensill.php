@@ -30,4 +30,9 @@ class Utensill extends Component
             dd($th);
         }
     }
+
+    public function export()
+    {
+        return redirect('/utensill/export');
+    }
 }

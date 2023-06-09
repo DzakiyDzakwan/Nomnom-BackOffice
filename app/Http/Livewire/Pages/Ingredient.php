@@ -30,4 +30,9 @@ class Ingredient extends Component
             dd($th);
         }
     }
+
+    public function export()
+    {
+        return redirect('/ingredient/export');
+    }
 }
