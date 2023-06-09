@@ -33,9 +33,17 @@
                             <div class="card-header d-flex align-items-center justify-content-between">
                                 <h4>List Kategori</h4>
                                 <div class="d-flex gap-2">
+                                    <div wire:ignore.self>
+                                        <form class="form form-vertical" wire:submit.prevent="export">
+                                            <button type="submit" class="btn btn-small btn-info" data-bs-toggle="tooltip"
+                                                data-bs-placement="rigth" title="Cetak" wire:click="export()">
+                                                PDF&nbsp <i class="bi bi-printer" style="font-size: 18px"></i>
+                                            </button>
+                                        </form>
+                                    </div>
                                     <button class="btn btn-small btn-success" data-bs-toggle="tooltip"
                                         data-bs-placement="rigth" title="Tambah" wire:click="$emit('showCreate')">
-                                        Tambah Kategori <i class="bi bi-pencil-square" style="font-size: 18px"></i>
+                                        Tambah Kategori&nbsp <i class="bi bi-pencil-square" style="font-size: 18px"></i>
                                     </button>
                                 </div>
                             </div>

@@ -35,10 +35,18 @@
                             <div class="card-header d-flex align-items-center justify-content-between">
                                 <h4>List Bahan</h4>
                                 <div class="d-flex gap-2">
+                                    <div wire:ignore.self>
+                                        <form class="form form-vertical" wire:submit.prevent="export">
+                                            <button type="submit" class="btn btn-small btn-info" data-bs-toggle="tooltip"
+                                                data-bs-placement="rigth" title="Cetak" wire:click="export()">
+                                                PDF&nbsp <i class="bi bi-printer" style="font-size: 18px"></i>
+                                            </button>
+                                        </form>
+                                    </div>
                                     {{-- Create Button --}}
                                     <button class="btn btn-small btn-success" data-bs-toggle="tooltip"
                                         data-bs-placement="rigth" title="Tambah" wire:click="$emit('showCreate')">
-                                        Tambah Bahan <i class="bi bi-pencil-square" style="font-size: 18px"></i>
+                                        Tambah Bahan&nbsp <i class="bi bi-pencil-square" style="font-size: 18px"></i>
                                     </button>
                                 </div>
                             </div>

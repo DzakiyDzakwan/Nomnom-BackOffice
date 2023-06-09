@@ -32,4 +32,9 @@ class SubCategory extends Component
             dd($th);
         }
     }
+
+    public function export()
+    {
+        return redirect('/sub-category/export');
+    }
 }
